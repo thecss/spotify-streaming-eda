@@ -36,8 +36,8 @@ artist_name VARCHAR(255),
 album_name VARCHAR(255),
 reason_start VARCHAR(50),
 reason_end VARCHAR(50),
-shuffle BOOLEAN,
-skipped BOOLEAN
+shuffle VARCHAR(50),
+skipped VARCHAR(50)
 );
 
 -- Enables the LOCAL INFILE option to allow importing data from a local CSV file.
@@ -47,6 +47,6 @@ LOAD DATA LOCAL INFILE 'spotify-streaming-eda/dataset/spotify_history.csv'
 INTO TABLE spotify_history
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
+LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
